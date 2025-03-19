@@ -1,4 +1,4 @@
-/* Reset defaults */
+/* General reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,88 +7,66 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #1a237e; /* Dark Blue */
-  color: white; /* Light text on dark background */
-  line-height: 1.6;
-  padding: 0 10px;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
 }
 
+/* Header Styling */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: #0d47a1; /* Darker Blue for header */
-  padding: 15px 30px;
-  flex-wrap: wrap;
-}
-
-header .logo img {
-  width: 150px;
-  height: auto;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-header nav ul li {
-  margin-right: 20px;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-header nav ul li a:hover {
-  color: #ff9800; /* Hover effect with orange */
-}
-
-.cta .button {
-  background-color: #ff9800; /* Orange button */
-  padding: 10px 20px;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-main {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.search-section {
-  margin-bottom: 30px;
-}
-
-.search-container {
   margin-bottom: 20px;
 }
 
-#search {
-  padding: 10px;
-  width: 300px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
+header .logo img {
+  width: 120px;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #0d47a1; /* Dark blue for search button */
-  color: white;
+/* Search Container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 400px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 15px;
   font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+.search-container button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #1976d2; /* Lighter blue on hover */
+.search-container button:hover {
+  background-color: #45a049;
+}
+
+/* Popular Search Styling */
+.popular-searches {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.popular-searches h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .popular-searches ul {
@@ -96,99 +74,50 @@ button:hover {
   padding: 0;
 }
 
-.popular-searches ul li {
-  display: inline-block;
-  margin-right: 15px;
+.popular-searches li {
+  margin: 5px 0;
 }
 
-.popular-searches ul li a {
-  color: #ff9800; /* Orange color for links */
+.popular-searches a {
   text-decoration: none;
-  font-weight: bold;
+  color: #4CAF50;
+  font-size: 16px;
 }
 
+.popular-searches a:hover {
+  text-decoration: underline;
+}
+
+/* Children Edition Section */
 .children-edition {
-  margin-top: 50px;
-  background-color: #1565c0; /* A light blue background */
-  padding: 20px;
-  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
 }
 
-footer {
-  background-color: #0d47a1; /* Dark Blue footer */
+.children-edition .button {
+  padding: 10px 20px;
+  background-color: #FF5722;
   color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.children-edition .button:hover {
+  background-color: #e64a19;
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 40px;
   text-align: center;
-  padding: 20px;
 }
 
 footer a {
-  color: white;
   text-decoration: none;
+  color: #4CAF50;
 }
 
 footer a:hover {
   text-decoration: underline;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  header nav ul li {
-    margin-bottom: 10px;
-  }
-
-  .search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #search {
-    width: 80%;
-    margin-bottom: 10px;
-  }
-
-  button {
-    width: 80%;
-  }
-
-  .popular-searches ul {
-    margin-top: 20px;
-  }
-
-  .popular-searches ul li {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .cta .button {
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  header .logo img {
-    width: 120px;
-  }
-
-  #search {
-    width: 90%;
-  }
-
-  button {
-    width: 90%;
-  }
-
-  .cta .button {
-    width: 90%;
-  }
 }
