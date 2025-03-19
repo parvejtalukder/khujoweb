@@ -1,3 +1,4 @@
+/* Reset defaults */
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +7,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f4f7;
-  color: #333;
+  background-color: #1a237e; /* Dark Blue */
+  color: white; /* Light text on dark background */
   line-height: 1.6;
 }
 
@@ -15,14 +16,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #009688;
+  background-color: #0d47a1; /* Darker Blue for header */
   padding: 15px 30px;
-  color: white;
 }
 
 header .logo h1 {
   font-size: 32px;
   font-weight: bold;
+}
+
+header .logo img {
+  width: 150px;
+  height: auto;
 }
 
 header nav ul {
@@ -40,8 +45,12 @@ header nav ul li a {
   font-size: 18px;
 }
 
+header nav ul li a:hover {
+  color: #ff9800; /* Hover effect with orange */
+}
+
 .cta .button {
-  background-color: #ff9800;
+  background-color: #ff9800; /* Orange button */
   padding: 10px 20px;
   color: white;
   text-decoration: none;
@@ -71,7 +80,7 @@ main {
 
 button {
   padding: 10px 20px;
-  background-color: #009688;
+  background-color: #0d47a1; /* Dark blue for search button */
   color: white;
   font-size: 16px;
   border: none;
@@ -80,7 +89,7 @@ button {
 }
 
 button:hover {
-  background-color: #00796b;
+  background-color: #1976d2; /* Lighter blue on hover */
 }
 
 .popular-searches ul {
@@ -94,20 +103,20 @@ button:hover {
 }
 
 .popular-searches ul li a {
-  color: #009688;
+  color: #ff9800; /* Orange color for links */
   text-decoration: none;
   font-weight: bold;
 }
 
 .children-edition {
   margin-top: 50px;
-  background-color: #e1f5fe;
+  background-color: #1565c0; /* A light blue background */
   padding: 20px;
   border-radius: 8px;
 }
 
 footer {
-  background-color: #009688;
+  background-color: #0d47a1; /* Dark Blue footer */
   color: white;
   text-align: center;
   padding: 20px;
