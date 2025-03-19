@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khujoweb - Bangla Search Engine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>খুঁজোওয়েব</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">হোম</a></li>
+        <li><a href="#">আমাদের সম্পর্কে</a></li>
+        <li><a href="#">যোগাযোগ</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">শিশুদের সংস্করণ</a></li>
+        <li><a href="#">ভাষা</a></li>
+      </ul>
+    </nav>
+    <div class="cta">
+      <a href="#" class="button">অ্যান্ড্রয়েড অ্যাপ ডাউনলোড</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <div class="search-container">
+        <input type="text" id="search" placeholder="এখানে অনুসন্ধান করুন...">
+        <button onclick="search()">খুঁজুন</button>
+      </div>
+      <div class="popular-searches">
+        <h3>জনপ্রিয় অনুসন্ধান</h3>
+        <ul>
+          <li><a href="#">প্রযুক্তি</a></li>
+          <li><a href="#">শিক্ষা</a></li>
+          <li><a href="#">সামাজিক যোগাযোগ</a></li>
+          <li><a href="#">খবর</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="children-edition">
+      <h3>শিশুদের জন্য নিরাপদ সংস্করণ</h3>
+      <p>একটি নিরাপদ এবং মজাদার পরিবেশে অনুসন্ধান করতে এখানে ক্লিক করুন।</p>
+      <a href="#" class="button">শিশুদের সংস্করণ</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 খুঁজোওয়েব | <a href="#">গোপনীয়তা নীতি</a> | <a href="#">সার্ভিস শর্তাবলী</a></p>
+  </footer>
+
+  <script>
+    function search() {
+      const query = document.getElementById('search').value;
+      if(query) {
+        window.location.href = `https://www.google.com/search?q=${query}`;
+      }
+    }
+  </script>
+</body>
+</html>
