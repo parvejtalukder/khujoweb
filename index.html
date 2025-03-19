@@ -1,36 +1,162 @@
 <!DOCTYPE html>
-<html lang="bn-BD">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>খুঁজোওয়েব &#8211; নিরাপদ বাংলা অনুসন্ধান</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>খুঁজোওয়েব</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .search-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .search-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .search-section input[type="text"] {
+            padding: 10px;
+            width: 50%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .search-section button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+
+        .feature {
+            text-align: center;
+            width: 30%;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        .feature-box {
+            background-color: #e9f5ff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f0f0f0;
+            border-top: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <img src="your-logo.png" alt="খুঁজোওয়েব লোগো" /> <h1>খুঁজোওয়েব</h1>
-        <p>নিরাপদ বাংলা অনুসন্ধান</p>
-    </div>
-
-    <div class="navigation">
-        <a href="home.html">হোম</a>
-        <a href="about.html">সম্পর্কিত</a>
-        <a href="contact.html">যোগাযোগ</a>
-        <a href="backend.html">Backend</a>
-    </div>
-
-    <div class="content">
-        <div class="search-form">
-            <input type="text" placeholder="অনুসন্ধান করুন..." />
-            <button>অনুসন্ধান</button>
-        </div>    </div>
-
-    <div class="footer">
-        <div class="social-links">
-            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a> <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h2>খুঁজোওয়েব</h2>
+                </div>
+                <ul>
+                    <li><a href="#">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#">গোপনীয়তা নীতি</a></li>
+                    <li><a href="#">যোগাযোগ</a></li>
+                    <li><a href="#">ENGLISH</a></li>
+                </ul>
+            </nav>
         </div>
-        <p>&copy; 2024 খুঁজোওয়েব</p>
-    </div>
+    </header>
+
+    <section class="search-section">
+        <div class="container">
+            <h1>খুঁজোওয়েব</h1>
+            <input type="text" placeholder="বাংলা অনুসন্ধান করুন...">
+            <button>সার্চ</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <div class="feature-box">
+                    <h3>নিরাপদ সার্চ</h3>
+                    <p>খুঁজোওয়েব সকলের জন্য অনুপযোগী এবং ক্ষতিকর তথ্য ফিল্টার করে শুধুমাত্র নিরাপদ তথ্য প্রদর্শন করে।</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-box">
+                    <h3>চাক্ষুষ ফলাফল</h3>
+                    <p>খুঁজোওয়ের অনুসন্ধানে ফলাফল মানানসই, সঠিক থাম্বনেইল সহ প্রদর্শন করা হয়।</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-box">
+                    <h3>সম্প্রদায় কেন্দ্রিক</h3>
+                    <p>খুঁজোওয়েব বাংলা ভাষাভাষী সম্প্রদায়ের জন্য ডিজাইন করা হয়েছে, যা বাঙালি সংস্কৃতি ও ঐতিহ্যের সাথে সামঞ্জস্যপূর্ণ।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 খুঁজোওয়েব. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
