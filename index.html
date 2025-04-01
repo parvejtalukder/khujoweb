@@ -120,16 +120,29 @@
         <p>&copy; ২০২৫ খুঁজোওয়েব। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-    <script>
-        function updateDateTime() {
-            const now = new Date();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            const dateTimeString = now.toLocaleDateString('bn-BD', options);
-            document.getElementById('date-time').textContent = dateTimeString;
-        }
+   <script>
+    function updateDateTime() {
+        const now = new Date();
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true // Use 12-hour format
+        };
+        const dateTimeString = now.toLocaleDateString('bn-BD', options);
 
-        updateDateTime(); // Initial update
-        setInterval(updateDateTime, 1000); // Update every second
-    </script>
+        // Replace AM/PM with Bengali equivalents
+        const bengaliDateTimeString = dateTimeString.replace('AM', 'এ.এম').replace('PM', 'পি.এম');
+
+        document.getElementById('date-time').textContent = bengaliDateTimeString;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+</script>
 </body>
 </html>
