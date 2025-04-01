@@ -12,6 +12,9 @@
             padding: 0;
             line-height: 1.6;
             background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .header {
@@ -27,7 +30,11 @@
         }
 
         .search-container {
-            text-align: center;
+            flex-grow: 1; /* Allow container to grow and fill available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
             padding: 40px 20px;
         }
 
@@ -61,34 +68,6 @@
             border-top: 1px solid #eee;
             font-size: 14px;
         }
-
-        .results-container {
-            padding: 20px;
-            max-width: 800px;
-            margin: 20px auto;
-        }
-
-        .result-item {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .result-title {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .result-link {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .result-description {
-            color: #555;
-        }
     </style>
 </head>
 <body>
@@ -100,17 +79,6 @@
         <input type="text" class="search-input" placeholder="এখানে খুঁজুন...">
         <button class="search-button">খুঁজুন</button>
     </div>
-
-    <div class="results-container">
-        <div class="result-item">
-            <h2 class="result-title"><a href="#" class="result-link">উদাহরণ ফলাফল ১</a></h2>
-            <p class="result-description">এটি একটি উদাহরণ ফলাফলের বিবরণ।</p>
-        </div>
-        <div class="result-item">
-            <h2 class="result-title"><a href="#" class="result-link">উদাহরণ ফলাফল ২</a></h2>
-            <p class="result-description">এটি অন্য একটি উদাহরণ ফলাফলের বিবরণ।</p>
-        </div>
-        </div>
 
     <div class="footer">
         <p>&copy; 2024 খুঁজোওয়েব। সর্বস্বত্ব সংরক্ষিত।</p>
