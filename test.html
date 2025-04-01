@@ -15,36 +15,32 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
         }
 
-        .header {
-            background-color: #fff;
-            padding: 20px;
+        .logo-container {
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .header img {
-            max-width: 150px;
+        .logo-container img {
+            max-width: 120px; /* Reduced logo size */
             height: auto;
         }
 
         .search-container {
-            flex-grow: 1; /* Allow container to grow and fill available space */
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center vertically */
-            align-items: center; /* Center horizontally */
-            padding: 40px 20px;
+            width: 80%;
+            max-width: 400px; /* Reduced search bar width */
+            text-align: center;
         }
 
         .search-input {
-            width: 80%;
-            max-width: 600px;
-            padding: 15px;
+            width: 100%;
+            padding: 10px; /* Reduced padding */
             border: 1px solid #ddd;
-            border-radius: 30px;
-            font-size: 16px;
+            border-radius: 20px; /* Smaller radius */
+            font-size: 14px; /* Reduced font size */
             font-family: 'Tiro Bangla', sans-serif;
             outline: none;
         }
@@ -52,13 +48,13 @@
         .search-button {
             background-color: #4CAF50;
             color: white;
-            padding: 15px 30px;
+            padding: 10px 20px; /* Reduced padding */
             border: none;
-            border-radius: 30px;
-            font-size: 16px;
+            border-radius: 20px; /* Smaller radius */
+            font-size: 14px; /* Reduced font size */
             font-family: 'Tiro Bangla', sans-serif;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 10px; /* Reduced margin */
         }
 
         .footer {
@@ -67,12 +63,13 @@
             text-align: center;
             border-top: 1px solid #eee;
             font-size: 14px;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="https://khujoweb.vercel.app/images/logo.png" alt="খুঁজোওয়েব লোগো">
+    <div class="logo-container">
+        <img src="khujoweb.png" alt="খুঁজোওয়েব লোগো">
     </div>
 
     <div class="search-container">
@@ -81,7 +78,7 @@
     </div>
 
     <div class="footer">
-        <p>&copy; 2024 খুঁজোওয়েব। সর্বস্বত্ব সংরক্ষিত।</p>
+        <p>&copy; ২০২৫ খুঁজোওয়েব। সর্বস্বত্ব সংরক্ষিত।</p>
     </div>
 </body>
 </html>
