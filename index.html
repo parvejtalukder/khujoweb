@@ -15,7 +15,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background-color: #f8f9fa; /* Light background */
+            background-color: #f8f9fa;
         }
 
         .logo-container {
@@ -23,7 +23,7 @@
         }
 
         .logo-container img {
-            max-width: 200px; /* Adjusted logo size */
+            max-width: 200px;
             height: auto;
         }
 
@@ -33,43 +33,77 @@
             text-align: center;
         }
 
-       .search-input-container {
-    display: flex;
-    width: 100%;
-}
+        .search-input-container {
+            display: flex;
+            width: 100%;
+        }
 
-.search-input {
-    flex-grow: 1;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 25px 0 0 25px; /* Rounded left corners */
-    font-size: 16px;
-    font-family: 'Tiro Bangla', sans-serif;
-    outline: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #333;
-    box-sizing: border-box; /* Important: Include padding in width/height */
-}
+        .search-input {
+            flex-grow: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+            font-family: 'Tiro Bangla', sans-serif;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #333;
+            box-sizing: border-box;
+        }
 
-.search-button {
-    background-color: #4285f4;
-    border: none;
-    color: white;
-    font-size: 14px;
-    padding: 15px 24px; /* Adjusted padding to match input height */
-    border-radius: 0 25px 25px 0; /* Rounded right corners */
-    cursor: pointer;
-    font-family: 'Tiro Bangla', sans-serif;
-    box-sizing: border-box; /* Important: Include padding in width/height */
-}
+        .search-button {
+            background-color: #4285f4;
+            border: none;
+            color: white;
+            font-size: 14px;
+            padding: 15px 24px;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            font-family: 'Tiro Bangla', sans-serif;
+            box-sizing: border-box;
+        }
 
-.search-button:hover {
-    background-color: #3c7ae0;
-}
+        .search-button:hover {
+            background-color: #3c7ae0;
+        }
+
         .date-time {
             margin-top: 20px;
             font-size: 14px;
             color: #555;
+        }
+
+        .trending-keywords {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .trending-keywords h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .trending-keywords ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .trending-keywords li {
+            background-color: #e8f0fe;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .trending-keywords li:hover {
+            background-color: #d0e0ff;
         }
 
         footer {
@@ -111,6 +145,12 @@
 
     <div class="date-time" id="date-time"></div>
 
+    <div class="trending-keywords">
+        <h3>জনপ্রিয় অনুসন্ধান</h3>
+        <ul id="trending-list">
+            </ul>
+    </div>
+
     <footer>
         <div class="footer-links">
             <a href="#">যোগাযোগ</a>
@@ -120,29 +160,48 @@
         <p>&copy; ২০২৫ খুঁজোওয়েব। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-   <script>
-    function updateDateTime() {
-        const now = new Date();
-        const options = {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: true // Use 12-hour format
-        };
-        const dateTimeString = now.toLocaleDateString('bn-BD', options);
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const dateTimeString = now.toLocaleDateString('bn-BD', options);
+            const bengaliDateTimeString = dateTimeString.replace('AM', 'এ.এম').replace('PM', 'পি.এম');
+            document.getElementById('date-time').textContent = bengaliDateTimeString;
+        }
 
-        // Replace AM/PM with Bengali equivalents
-        const bengaliDateTimeString = dateTimeString.replace('AM', 'এ.এম').replace('PM', 'পি.এম');
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
 
-        document.getElementById('date-time').textContent = bengaliDateTimeString;
-    }
+        const trendingKeywords = [
+            "বাংলাদেশ ক্রিকেট",
+            "আজকের খবর",
+            "অনলাইন ক্লাস",
+            "রেসিপি",
+            "সরকারি চাকরি",
+            "সিনেমা",
+            "শিক্ষাবৃত্তি"
+        ];
 
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
-</script>
+        const trendingList = document.getElementById("trending-list");
+
+        trendingKeywords.forEach(keyword => {
+            const listItem = document.createElement("li");
+            listItem.textContent = keyword;
+            listItem.addEventListener("click", () => {
+                document.querySelector(".search-input").value = keyword;
+                document.querySelector(".search-form").submit();
+            });
+            trendingList.appendChild(listItem);
+        });
+    </script>
 </body>
 </html>
