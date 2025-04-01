@@ -106,36 +106,6 @@
             background-color: #d0e0ff;
         }
 
-        .news-section {
-            margin-top: 30px;
-            text-align: left;
-            width: 80%;
-            max-width: 800px;
-        }
-
-        .news-section h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .news-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .news-item a {
-            text-decoration: none;
-            color: #007bff;
-        }
-
-        .news-item p {
-            margin-top: 5px;
-            color: #555;
-        }
-
         footer {
             margin-top: 80px;
             padding: 15px 20px;
@@ -179,12 +149,6 @@
         <h3>জনপ্রিয় অনুসন্ধান</h3>
         <ul id="trending-list">
             </ul>
-    </div>
-
-    <div class="news-section">
-        <h3>আজকের খবর</h3>
-        <div id="news-container">
-            </div>
     </div>
 
     <footer>
@@ -238,53 +202,6 @@
             });
             trendingList.appendChild(listItem);
         });
-
-        async function fetchNews() {
-            const newsContainer = document.getElementById("news-container");
-            newsContainer.innerHTML = "<p>খবর লোড হচ্ছে...</p>";
-
-            try {
-                // Fetch news from Bangladesh Sangbad Sangstha (BSS) - Example (replace with actual API if available)
-                const bssNews = await fetch("https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=Bangladesh%20news&origin=*"); // Example using Wikipedia API
-                const bssData = await bssNews.json();
-                const bssResults = bssData.query.search.slice(0, 3); // Get first 3 results
-
-                // Fetch news from Bengali Wikinews - Example (replace with actual API if available)
-                const wikinews = await fetch("https://bn.wikinews.org/w/api.php?action=query&format=json&list=recentchanges&rclimit=3&origin=*"); // Example using Wikinews API
-                const wikinewsData = await wikinews.json();
-                const wikinewsResults = wikinewsData.query.recentchanges;
-
-                newsContainer.innerHTML = ""; // Clear loading message
-
-                // Display BSS news
-                bssResults.forEach(item => {
-                    const newsItem = document.createElement("div");
-                    newsItem.classList.add("news-item");
-                    newsItem.innerHTML = `
-                        <a href="https://en.wikipedia.org/wiki/${item.title}" target="_blank">${item.title}</a>
-                        <p>${item.snippet}</p>
-                    `;
-                    newsContainer.appendChild(newsItem);
-                });
-
-                // Display Bengali Wikinews
-                wikinewsResults.forEach(item => {
-                    const newsItem = document.createElement("div");
-                    newsItem.classList.add("news-item");
-                    newsItem.innerHTML = `
-                        <a href="https://bn.wikinews.org/wiki/${item.title}" target="_blank">${item.title}</a>
-                        <p>সাম্প্রতিক খবর</p>
-                    `;
-                    newsContainer.appendChild(newsItem);
-                });
-
-            } catch (error) {
-                console.error("Error fetching news:", error);
-                newsContainer.innerHTML = "<p>খবর লোড করা সম্ভব হয়নি।</p>";
-            }
-        }
-
-        fetchNews();
     </script>
 </body>
 </html>
