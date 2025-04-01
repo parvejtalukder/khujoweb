@@ -33,45 +33,52 @@
             text-align: center;
         }
 
-        .search-input {
+        .search-input-container {
+            display: flex;
             width: 100%;
+        }
+
+        .search-input {
+            flex-grow: 1;
             padding: 15px;
             border: 1px solid #ddd;
-            border-radius: 25px;
+            border-radius: 25px 0 0 25px; /* Rounded left corners */
             font-size: 16px;
             font-family: 'Tiro Bangla', sans-serif;
             outline: none;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            color: #333; /* Darker placeholder text */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #333;
         }
 
-        .search-buttons {
-            margin-top: 20px;
-        }
-
-        .search-buttons button {
-            background-color: #4285f4; /* Google blue */
+        .search-button {
+            background-color: #4285f4;
             border: none;
             color: white;
             font-size: 14px;
             padding: 12px 24px;
-            border-radius: 4px;
+            border-radius: 0 4px 4px 0; /* Rounded right corners */
             cursor: pointer;
             font-family: 'Tiro Bangla', sans-serif;
         }
 
-        .search-buttons button:hover {
+        .search-button:hover {
             background-color: #3c7ae0;
         }
 
+        .date-time {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
         footer {
-            margin-top: 80px; /* Adjusted margin */
-            padding: 15px 20px; /* Adjusted padding */
+            margin-top: 80px;
+            padding: 15px 20px;
             background-color: #2B587A;
-            color: #ddd; /* Lighter text for better contrast */
+            color: #ddd;
             text-align: center;
             width: 100%;
-            font-size: 14px; /* Adjusted font size */
+            font-size: 14px;
         }
 
         .footer-links {
@@ -91,15 +98,17 @@
 </head>
 <body>
     <div class="logo-container">
-        <img src="khujoweb.png" alt="খুঁজোওয়েব লোগো">
+        <img src="./khujoweb.png" alt="খুঁজোওয়েব লোগো">
     </div>
 
     <form class="search-form" action="result.html" method="get">
-        <input type="text" class="search-input" name="query" placeholder="এখানে খুঁজুন...">
-        <div class="search-buttons">
-            <button type="submit">খুঁজোওয়েব অনুসন্ধান</button>
+        <div class="search-input-container">
+            <input type="text" class="search-input" name="query" placeholder="এখানে খুঁজুন...">
+            <button type="submit" class="search-button">খুঁজুন</button>
         </div>
     </form>
+
+    <div class="date-time" id="date-time"></div>
 
     <footer>
         <div class="footer-links">
@@ -109,5 +118,17 @@
         </div>
         <p>&copy; ২০২৫ খুঁজোওয়েব। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const dateTimeString = now.toLocaleDateString('bn-BD', options);
+            document.getElementById('date-time').textContent = dateTimeString;
+        }
+
+        updateDateTime(); // Initial update
+        setInterval(updateDateTime, 1000); // Update every second
+    </script>
 </body>
 </html>
