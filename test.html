@@ -1,66 +1,119 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn-BD">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khujoweb - Bangla Search Engine</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>খুঁজোওয়েব - নিরাপদ বাংলা অনুসন্ধান</title>
+    <link href="https://fonts.maateen.me/tiro-bangla/font.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tiro Bangla', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .search-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .search-input {
+            width: 80%;
+            max-width: 600px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 16px;
+            font-family: 'Tiro Bangla', sans-serif;
+            outline: none;
+        }
+
+        .search-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-family: 'Tiro Bangla', sans-serif;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .results-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .result-item {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .result-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .result-description {
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1>খুঁজোওয়েব</h1>
+    <div class="header">
+        <img src="https://khujoweb.vercel.app/images/logo.png" alt="খুঁজোওয়েব লোগো">
     </div>
-    <nav>
-      <ul>
-        <li><a href="#">হোম</a></li>
-        <li><a href="#">আমাদের সম্পর্কে</a></li>
-        <li><a href="#">যোগাযোগ</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">শিশুদের সংস্করণ</a></li>
-        <li><a href="#">ভাষা</a></li>
-      </ul>
-    </nav>
-    <div class="cta">
-      <a href="#" class="button">অ্যান্ড্রয়েড অ্যাপ ডাউনলোড</a>
+
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="এখানে খুঁজুন...">
+        <button class="search-button">খুঁজুন</button>
     </div>
-  </header>
 
-  <main>
-    <section class="search-section">
-      <div class="search-container">
-        <input type="text" id="search" placeholder="এখানে অনুসন্ধান করুন...">
-        <button onclick="search()">খুঁজুন</button>
-      </div>
-      <div class="popular-searches">
-        <h3>জনপ্রিয় অনুসন্ধান</h3>
-        <ul>
-          <li><a href="#">প্রযুক্তি</a></li>
-          <li><a href="#">শিক্ষা</a></li>
-          <li><a href="#">সামাজিক যোগাযোগ</a></li>
-          <li><a href="#">খবর</a></li>
-        </ul>
-      </div>
-    </section>
+    <div class="results-container">
+        <div class="result-item">
+            <h2 class="result-title"><a href="#" class="result-link">উদাহরণ ফলাফল ১</a></h2>
+            <p class="result-description">এটি একটি উদাহরণ ফলাফলের বিবরণ।</p>
+        </div>
+        <div class="result-item">
+            <h2 class="result-title"><a href="#" class="result-link">উদাহরণ ফলাফল ২</a></h2>
+            <p class="result-description">এটি অন্য একটি উদাহরণ ফলাফলের বিবরণ।</p>
+        </div>
+        </div>
 
-    <section class="children-edition">
-      <h3>শিশুদের জন্য নিরাপদ সংস্করণ</h3>
-      <p>একটি নিরাপদ এবং মজাদার পরিবেশে অনুসন্ধান করতে এখানে ক্লিক করুন।</p>
-      <a href="#" class="button">শিশুদের সংস্করণ</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 খুঁজোওয়েব | <a href="#">গোপনীয়তা নীতি</a> | <a href="#">সার্ভিস শর্তাবলী</a></p>
-  </footer>
-
-  <script>
-    function search() {
-      const query = document.getElementById('search').value;
-      if(query) {
-        window.location.href = `https://www.google.com/search?q=${query}`;
-      }
-    }
-  </script>
+    <div class="footer">
+        <p>&copy; 2024 খুঁজোওয়েব। সর্বস্বত্ব সংরক্ষিত।</p>
+    </div>
 </body>
 </html>
