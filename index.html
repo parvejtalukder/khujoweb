@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>খুঁজোওয়েব</title>
     <link href="https://fonts.maateen.me/tiro-bangla/font.css" rel="stylesheet">
     <style>
@@ -20,7 +21,7 @@
 
         header {
             width: 100%;
-            background-color: #f0f0f0;
+            background-color: #f8f9fa;
             color: #555;
             text-align: right;
             padding: 10px 20px;
@@ -30,7 +31,7 @@
         header a {
             color: #555;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 10px; /* Reduced margin for smaller screens */
             font-size: 14px;
         }
 
@@ -40,20 +41,22 @@
             align-items: center;
             justify-content: center;
             flex-grow: 1;
+            width: 100%; /* Added width for better responsiveness */
+            max-width: 600px; /* Set a maximum width */
+            padding: 20px; /* Added padding for better spacing */
         }
 
         .logo-container {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .logo-container img {
-            max-width: 272px;
+            max-width: 200px; /* Reduced logo size for smaller screens */
             height: auto;
         }
 
         .search-form {
-            width: 90%;
-            max-width: 600px;
+            width: 100%; /* Made the search form responsive */
             text-align: center;
         }
 
@@ -124,7 +127,7 @@
         }
 
         footer {
-            background-color: #f0f0f0;
+            background-color: #f8f9fa;
             padding: 15px 20px;
             font-size: 14px;
             color: #555;
@@ -146,12 +149,23 @@
         .footer-links a:hover {
             text-decoration: underline;
         }
+
+        @media screen and (max-width: 600px) {
+            .searchArea {
+                padding: 10px;
+            }
+            .logo-container img {
+                max-width: 150px; /* Further reduce logo size on smaller screens */
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <a href="#">ব্লগ</a>
+        <a href="#">জিমেইল</a>
+        <a href="#">ছবি</a>
+        <a href="#">সাইন ইন</a>
     </header>
     <section class="searchArea">
         <div class="logo-container">
