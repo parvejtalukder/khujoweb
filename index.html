@@ -2,7 +2,7 @@
 <html lang="bn-BD">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>খুঁজোওয়েব - নিরাপদ বাংলা অনুসন্ধান</title>
     <link href="https://fonts.maateen.me/tiro-bangla/font.css" rel="stylesheet">
     <style>
@@ -13,9 +13,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Align content from the top */
             min-height: 100vh;
             background-color: #f8f9fa;
+        }
+
+        header {
+            width: 100%;
+            background-color: #2B587A;
+            color: #ddd;
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 20px;
         }
 
         .logo-container {
@@ -108,7 +117,7 @@
 
         .news-section {
             margin-top: 30px;
-            text-align: center; /* Center the news section */
+            text-align: center;
             width: 80%;
             max-width: 800px;
         }
@@ -124,15 +133,15 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: left; /* Align news content to the left */
+            text-align: left;
         }
 
         .news-item a {
             text-decoration: none;
             color: #007bff;
             font-weight: bold;
-            display: block; /* Make the link a block to center it */
-            margin-bottom: 5px; /* Add some space below the title */
+            display: block;
+            margin-bottom: 5px;
         }
 
         .news-item p {
@@ -172,6 +181,8 @@
     </style>
 </head>
 <body>
+    <header id="location-header">
+        </header>
     <div class="logo-container">
         <img src="./khujoweb.png" alt="খুঁজোওয়েব লোগো">
     </div>
@@ -182,13 +193,13 @@
             <button type="submit" class="search-button">খুঁজুন</button>
         </div>
     </form>
-   <div class="date-time" id="date-time"></div>
+    <div class="date-time" id="date-time"></div>
     <div class="trending-keywords">
         <h3>জনপ্রিয় অনুসন্ধান</h3>
         <ul id="trending-list">
-            </ul>
+        </ul>
     </div>
-
+    </div>
     <footer>
         <div class="footer-links">
             <a href="#">যোগাযোগ</a>
@@ -271,15 +282,29 @@
                         newsContainer.appendChild(newsItem);
                     });
                 } else {
-                    newsContainer.innerHTML = "<p>খবর লোড করা সম্ভব হয়নি।</p>";
+                    newsContainer.innerHTML = "<p>খবর লোড করা সম্ভব হয়নি।</p>";
                 }
             } catch (error) {
                 console.error("Error fetching Jagonews:", error);
-                newsContainer.innerHTML = "<p>খবর লোড করা সম্ভব হয়নি।</p>";
+                newsContainer.innerHTML = "<p>খবর লোড করা সম্ভব হয়নি।</p>";
             }
         }
 
         fetchJagonews();
+
+        async function displayLocation() {
+          try {
+            const response = await fetch('https://ipapi.co/json/');
+            const data = await response.json();
+            const locationString = `${data.city}, ${data.country_name}`;
+            document.getElementById('location-header').textContent = locationString;
+          } catch (error) {
+            console.error('Error fetching location:', error);
+            document.getElementById('location-header').textContent = 'অবস্থান সনাক্ত করা যায়নি';
+          }
+        }
+
+        displayLocation();
     </script>
 </body>
 </html>
