@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>খুঁজোওয়েব - নিরাপদ বাংলা অনুসন্ধান</title>
+    <title>খুঁজোওয়েব</title>
     <link href="https://fonts.maateen.me/tiro-bangla/font.css" rel="stylesheet">
     <style>
         body {
@@ -20,46 +20,59 @@
 
         header {
             width: 100%;
-            background-color: #2B587A;
-            color: #ddd;
-            text-align: center;
-            padding: 10px 0;
-            margin-bottom: 20px;
+            background-color: #f0f0f0;
+            color: #555;
+            text-align: right;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        header a {
+            color: #555;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .searchArea {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
         }
 
         .logo-container {
-            margin-bottom: 20px;
-            margin-top: 10px;
+            margin-bottom: 30px;
         }
 
         .logo-container img {
-            max-width: 180px;
+            max-width: 272px;
             height: auto;
         }
 
         .search-form {
             width: 90%;
-            max-width: 650px;
+            max-width: 600px;
             text-align: center;
-            margin-bottom: 15px;
         }
 
         .search-input-container {
             display: flex;
             width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 24px;
+            padding: 5px 10px;
+            box-sizing: border-box;
         }
 
         .search-input {
             flex-grow: 1;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 25px 0 0 25px;
+            padding: 8px;
+            border: none;
+            outline: none;
             font-size: 16px;
             font-family: 'Tiro Bangla', sans-serif;
-            outline: none;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            color: #333;
-            box-sizing: border-box;
         }
 
         .search-button {
@@ -67,31 +80,24 @@
             border: none;
             color: white;
             font-size: 14px;
-            padding: 12px 20px;
-            border-radius: 0 25px 25px 0;
+            padding: 8px 20px;
+            border-radius: 24px;
             cursor: pointer;
             font-family: 'Tiro Bangla', sans-serif;
-            box-sizing: border-box;
         }
 
         .search-button:hover {
             background-color: #3c7ae0;
         }
 
-        .date-time {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #555;
-        }
-
         .trending-keywords {
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: center;
         }
 
         .trending-keywords h3 {
             font-size: 17px;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
         }
 
         .trending-keywords ul {
@@ -106,7 +112,7 @@
         .trending-keywords li {
             background-color: #e8f0fe;
             padding: 7px 12px;
-            margin: 4px;
+            margin: 5px;
             border-radius: 20px;
             font-size: 13px;
             cursor: pointer;
@@ -118,23 +124,23 @@
         }
 
         footer {
-            margin-top: 40px;
-            padding: 10px 20px;
-            background-color: #2B587A;
-            color: #ddd;
+            background-color: #f0f0f0;
+            padding: 15px 20px;
+            font-size: 14px;
+            color: #555;
             text-align: center;
             width: 100%;
-            font-size: 13px;
+            box-sizing: border-box;
         }
 
         .footer-links {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: #ddd;
+            color: #555;
             text-decoration: none;
-            margin: 0 8px;
+            margin: 0 10px;
         }
 
         .footer-links a:hover {
@@ -145,24 +151,26 @@
 
 <body>
     <header>
-        <marquee>খুঁজোওয়েব, পরীক্ষামূলক বাংলা অনুসন্ধান ইঞ্জিন। </marquee>
+        <a href="#">ব্লগ</a>
     </header>
-    <div class="logo-container">
-        <img src="./khujoweb.png" alt="খুঁজোওয়েব লোগো">
-    </div>
-
-    <form class="search-form" action="result.html" method="get">
-        <div class="search-input-container">
-            <input type="text" class="search-input" name="query" placeholder="এখানে খুঁজুন...">
-            <button type="submit" class="search-button">খুঁজুন</button>
+    <section class="searchArea">
+        <div class="logo-container">
+            <img src="./khujoweb.png" alt="খুঁজোওয়েব লোগো">
         </div>
-    </form>
-    <div class="date-time" id="date-time"></div>
-    <div class="trending-keywords">
-        <h3>জনপ্রিয় অনুসন্ধান</h3>
-        <ul id="trending-list">
-        </ul>
-    </div>
+
+        <form class="search-form" action="result.html" method="get">
+            <div class="search-input-container">
+                <input type="text" class="search-input" name="query" placeholder="এখানে খুঁজুন...">
+                <button type="submit" class="search-button">খুঁজুন</button>
+            </div>
+        </form>
+
+        <div class="trending-keywords">
+            <h3>জনপ্রিয় অনুসন্ধান</h3>
+            <ul id="trending-list">
+            </ul>
+        </div>
+    </section>
     <footer>
         <div class="footer-links">
             <a href="#">যোগাযোগ</a>
@@ -173,26 +181,6 @@
     </footer>
 
     <script>
-        function updateDateTime() {
-            const now = new Date();
-            const options = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true
-            };
-            const dateTimeString = now.toLocaleDateString('bn-BD', options);
-            const bengaliDateTimeString = dateTimeString.replace('AM', 'এ.এম').replace('PM', 'পি.এম');
-            document.getElementById('date-time').textContent = bengaliDateTimeString;
-        }
-
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
-
         const trendingKeywords = [
             "বাংলাদেশ ক্রিকেট",
             "আজকের খবর",
