@@ -182,7 +182,7 @@
 </head>
 <body>
     <header id="location-header">
-        </header>
+    </header>
     <div class="logo-container">
         <img src="./khujoweb.png" alt="খুঁজোওয়েব লোগো">
     </div>
@@ -199,6 +199,7 @@
         <ul id="trending-list">
         </ul>
     </div>
+    <div class="news-section" id="jagonews-container">
     </div>
     <footer>
         <div class="footer-links">
@@ -292,16 +293,48 @@
 
         fetchJagonews();
 
-        async function displayLocation() {
-          try {
-            const response = await fetch('https://ipapi.co/json/');
-            const data = await response.json();
-            const locationString = `${data.city}, ${data.country_name}`;
-            document.getElementById('location-header').textContent = locationString;
-          } catch (error) {
-            console.error('Error fetching location:', error);
-            document.getElementById('location-header').textContent = 'অবস্থান সনাক্ত করা যায়নি';
-          }
+        function displayLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById('location-header').textContent = "জিওলোকেশন সমর্থিত নয়।";
+            }
+        }
+
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=YOUR_OPENCAGE_API_KEY&language=bn`) // Replace YOUR_OPENCAGE_API_KEY
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results && data.results.length > 0) {
+                        const location = data.results[0].formatted;
+                        document.getElementById('location-header').textContent = location;
+                    } else {
+                        document.getElementById('location-header').textContent = "অবস্থান খুঁজে পাওয়া যায়নি।";
+                    }
+                })
+                .catch(error => {
+                    console.error('অবস্থান খুঁজে পেতে ব্যর্থ:', error);
+                    document.getElementById('location-header').textContent = "অবস্থান খুঁজে পাওয়া যায়নি।";
+                });
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById('location-header').textContent = "ব্যবহারকারী জিওলোকেশন অনুমতি অস্বীকার করেছে।";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById('location-header').textContent = "অবস্থান তথ্য অনুপলব্ধ।";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById('location-header').textContent = "ব্যবহারকারীর অবস্থান অনুরোধ করার সময় অতিবাহিত হয়েছে।";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById('location-header').textContent = "একটি অজানা ত্রুটি ঘটেছে।";
+                    break;
+            }
         }
 
         displayLocation();
