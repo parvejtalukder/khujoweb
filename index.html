@@ -13,7 +13,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Align content from the top */
+            justify-content: flex-start;
             min-height: 100vh;
             background-color: #f8f9fa;
         }
@@ -28,18 +28,20 @@
         }
 
         .logo-container {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            margin-top: 10px;
         }
 
         .logo-container img {
-            max-width: 200px;
+            max-width: 180px;
             height: auto;
         }
 
         .search-form {
-            width: 80%;
-            max-width: 600px;
+            width: 90%;
+            max-width: 650px;
             text-align: center;
+            margin-bottom: 15px;
         }
 
         .search-input-container {
@@ -49,7 +51,7 @@
 
         .search-input {
             flex-grow: 1;
-            padding: 15px;
+            padding: 12px;
             border: 1px solid #ddd;
             border-radius: 25px 0 0 25px;
             font-size: 16px;
@@ -65,7 +67,7 @@
             border: none;
             color: white;
             font-size: 14px;
-            padding: 15px 24px;
+            padding: 12px 20px;
             border-radius: 0 25px 25px 0;
             cursor: pointer;
             font-family: 'Tiro Bangla', sans-serif;
@@ -77,19 +79,19 @@
         }
 
         .date-time {
-            margin-top: 20px;
+            margin-top: 15px;
             font-size: 14px;
             color: #555;
         }
 
         .trending-keywords {
-            margin-top: 30px;
+            margin-top: 20px;
             text-align: center;
         }
 
         .trending-keywords h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 17px;
+            margin-bottom: 8px;
         }
 
         .trending-keywords ul {
@@ -103,10 +105,10 @@
 
         .trending-keywords li {
             background-color: #e8f0fe;
-            padding: 8px 15px;
-            margin: 5px;
+            padding: 7px 12px;
+            margin: 4px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
             color: #333;
         }
@@ -115,64 +117,24 @@
             background-color: #d0e0ff;
         }
 
-        .news-section {
-            margin-top: 30px;
-            text-align: center;
-            width: 80%;
-            max-width: 800px;
-        }
-
-        .news-section h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .news-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-
-        .news-item a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .news-item p {
-            margin-top: 5px;
-            color: #555;
-        }
-
-        .news-item img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
         footer {
-            margin-top: 80px;
-            padding: 15px 20px;
+            margin-top: 40px;
+            padding: 10px 20px;
             background-color: #2B587A;
             color: #ddd;
             text-align: center;
             width: 100%;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .footer-links {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .footer-links a {
             color: #ddd;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 8px;
         }
 
         .footer-links a:hover {
@@ -182,7 +144,7 @@
 </head>
 <body>
     <header>
-            <marquee>খুঁজোওয়েব, পরীক্ষামূলক বাংলা অনুসন্ধান ইঞ্জিন। </marquee>
+        <marquee>খুঁজোওয়েব, পরীক্ষামূলক বাংলা অনুসন্ধান ইঞ্জিন। </marquee>
     </header>
     <div class="logo-container">
         <img src="./khujoweb.png" alt="খুঁজোওয়েব লোগো">
@@ -199,7 +161,6 @@
         <h3>জনপ্রিয় অনুসন্ধান</h3>
         <ul id="trending-list">
         </ul>
-    </div>
     </div>
     <footer>
         <div class="footer-links">
