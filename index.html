@@ -162,8 +162,8 @@
             padding: 10px 20px;
             font-size: 14px;
             color: #555;
-            width: 100%; /* added to take full width */
-            box-sizing: border-box; /* added to include padding in width */
+            width: 100%;
+            box-sizing: border-box;
         }
 
         @media screen and (max-width: 600px) {
@@ -197,7 +197,7 @@
 
 <body>
     <header>
-        <div id="datetime"></div>
+         <div id="datetime"></div>
         <a href="https://blog.khujoweb.com">খুঁজোওয়েব ব্লগ</a>
     </header>
     <section class="searchArea">
@@ -256,7 +256,7 @@
 
         function updateDateTime() {
             const now = new Date();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+            const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
             const formattedDateTime = now.toLocaleDateString('bn-BD', options);
             document.getElementById('datetime').textContent = formattedDateTime;
         }
