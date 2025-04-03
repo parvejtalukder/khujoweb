@@ -14,6 +14,16 @@
             background-color: #f4f4f4;
         }
 
+        .header-container {
+            text-align: center; /* Center the logo */
+            margin-bottom: 20px; /* Add some space below the logo */
+        }
+
+        .header-container img {
+            max-width: 150px;
+            height: auto;
+        }
+
         .about-container {
             padding: 20px;
             max-width: 800px;
@@ -59,10 +69,33 @@
         footer p {
             font-size: 14px;
         }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .about-container {
+                padding: 15px;
+                margin: 10px auto;
+            }
+
+            .header-container img {
+                max-width: 120px; /* Adjust logo size for mobile */
+            }
+
+            .footer-links a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+        }
     </style>
 </head>
 <body>
-    <a href="https://khujoweb.com"><img src="https://khujoweb.vercel.app/khujoweb.png" style="width: 150px; height: auto; align="center"></a>
+    <div class="header-container">
+        <a href="https://khujoweb.com"><img src="https://khujoweb.vercel.app/khujoweb.png" alt="খুঁজোওয়েব লোগো"></a>
+    </div>
     <hr>
 
     <div class="about-container">
@@ -82,8 +115,8 @@
 
     <footer>
         <div class="footer-links">
-            <a href="about.html">আমাদের সম্পর্কে</a>
             <a href="contact.html">যোগাযোগ</a>
+            <a href="terms-of-conditions.html">শর্তাবলী</a>
             <a href="privacy-policy.html">গোপনীয়তা নীতি</a>
         </div>
         <p>&copy; ২০২৫ খুঁজোওয়েব। সর্বস্বত্ব সংরক্ষিত।</p>
