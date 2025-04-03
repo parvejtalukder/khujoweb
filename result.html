@@ -116,47 +116,66 @@
             font-size: 14px;
         }
         .search-form {
-        width: 100%;
-        text-align: center;
-        display: flex; /* Use flexbox for centering */
-        justify-content: center; /* Center horizontally */
-    }
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
 
+.search-input-container {
+    display: flex;
+    max-width: 500px; /* Use max-width instead of width */
+    width: 90%; /* Use percentage width for better responsiveness */
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    padding: 3px 6px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 8px; /* Increase padding */
+    border: none;
+    outline: none;
+    font-size: 16px; /* Increase font size */
+    font-family: 'Tiro Bangla', sans-serif;
+    background-color: transparent;
+}
+
+.search-button {
+    background-color: #4285f4;
+    border: none;
+    color: white;
+    font-size: 16px; /* Increase font size */
+    padding: 8px 16px; /* Increase padding */
+    border-radius: 24px;
+    cursor: pointer;
+    font-family: 'Tiro Bangla', sans-serif;
+}
+
+.search-button:hover {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+/* Media query for mobile screens (e.g., screens smaller than 600px) */
+@media (max-width: 600px) {
     .search-input-container {
-        display: flex;
-        width: 50%; /* Or adjust as needed */
-        border: 1px solid #ddd;
-        border-radius: 24px;
-        padding: 3px 6px;
-        box-sizing: border-box;
-        background-color: rgba(255, 255, 255, 0.7);
+        width: 95%; /* Make it wider on mobile */
+        padding: 2px 4px; /* Reduce padding on mobile */
     }
 
     .search-input {
-        flex-grow: 1;
-        padding: 2px;
-        border: none;
-        outline: none;
-        font-size: 13px;
-        font-family: 'Tiro Bangla', sans-serif;
-        background-color: transparent;
+        font-size: 14px; /* Reduce font size on mobile */
+        padding: 4px;
     }
 
     .search-button {
-        background-color: #4285f4;
-        border: none;
-        color: white;
-        font-size: 14px;
-        padding: 2px 8px;
-        border-radius: 24px;
-        cursor: pointer;
-        font-family: 'Tiro Bangla', sans-serif;
+        font-size: 14px; /* Reduce font size on mobile */
+        padding: 4px 8px; /* Reduce padding on mobile */
     }
-
-    .search-button:hover {
-        background-color: #f8f9fa;
-        color: black;
-    }
+}
     </style>
 </head>
 <body align="center">
