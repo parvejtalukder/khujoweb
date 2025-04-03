@@ -157,6 +157,15 @@
             text-decoration: underline;
         }
 
+        #datetime {
+            text-align: left;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #555;
+            width: 100%; /* added to take full width */
+            box-sizing: border-box; /* added to include padding in width */
+        }
+
         @media screen and (max-width: 600px) {
             .searchArea {
                 padding: 10px;
@@ -167,16 +176,20 @@
             }
 
             .search-input-container {
-                max-width: 90%; /* Adjust for mobile */
+                max-width: 90%;
             }
 
             .search-button {
-                padding: 8px 15px; /* Adjust button padding on mobile */
+                padding: 8px 15px;
             }
 
             .trending-keywords li {
-                padding: 5px 10px; /* Adjust trending keywords padding on mobile */
-                margin: 3px; /* Adjust trending keywords margin on mobile */
+                padding: 5px 10px;
+                margin: 3px;
+            }
+
+            #datetime {
+                padding: 5px 10px;
             }
         }
     </style>
@@ -204,6 +217,7 @@
             </ul>
         </div>
     </section>
+    <div id="datetime"></div>
     <footer>
         <div class="footer-links">
             <a href="#">যোগাযোগ</a>
@@ -239,6 +253,16 @@
             });
             trendingList.appendChild(listItem);
         });
+
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+            const formattedDateTime = now.toLocaleDateString('bn-BD', options);
+            document.getElementById('datetime').textContent = formattedDateTime;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
     </script>
 </body>
 
