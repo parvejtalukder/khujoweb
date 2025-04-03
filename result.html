@@ -173,7 +173,7 @@ const badWords = [
         let currentQuery = "";
     function searchResults(query, page = 1) {
         const API_KEY = 'AIzaSyDKXpESEQAgLuZSkHqgG-gEPxZBViozuJg';  // Your API Key
-        const CX_KEY = '2263097502101497e';  // Replace with your Custom Search Engine ID
+        const CX_KEY = 'c10244d8b3e1843b9';  // Replace with your Custom Search Engine ID
         const startIndex = (page - 1) * 10 + 1;
         const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&key=${API_KEY}&cx=${CX_KEY}&start=${startIndex}&safe=active`;
 
