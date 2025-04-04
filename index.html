@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>খুঁজোওয়েব</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/parvejtalukder/khujoweb/refs/heads/main/favicon.png" type="image/png">
+    <meta name="description" content="খুঁজোওয়েব: বাংলাদেশের নিরাপদ বাংলা সার্চ ইঞ্জিন, নির্ভরযোগ্য তথ্য এবং সুরক্ষিত অনুসন্ধান অভিজ্ঞতা উপভোগ করুন।">
+    <meta name="keywords" content="বাংলা সার্চ ইঞ্জিন, নিরাপদ সার্চ, বাংলাদেশ সার্চ ইঞ্জিন, বাংলা তথ্য অনুসন্ধান, সিলেট সার্চ ইঞ্জিন, বাংলাদেশ ভিত্তিক বাংলা সার্চ">
+    <meta name="author" content="খুঁজোওয়েব টিম">
+    <meta property="og:title" content="খুঁজোওয়েব - নিরাপদ বাংলা সার্চ ইঞ্জিন">
+    <meta property="og:description" content="খুঁজোওয়েব: বাংলাদেশের প্রথম নিরাপদ বাংলা সার্চ ইঞ্জিন, নির্ভরযোগ্য তথ্য এবং সুরক্ষিত অনুসন্ধান অভিজ্ঞতা উপভোগ করুন।">
+    <meta property="og:type" content="website">
+    <link href="https://fonts.maateen.me/tiro-bangla/font.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tiro Bangla', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            width: 100%;
+            background-color: #f8f9fa;
+            color: #555;
+            text-align: right;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        header a {
+            color: #555;
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        .searchArea {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .search-form {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-input-container {
+            display: flex;
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid #ddd;
+            border-radius: 24px;
+            padding: 5px 10px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-input {
+            flex-grow: 1;
+            padding: 8px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-family: 'Tiro Bangla', sans-serif;
+            background-color: transparent;
+        }
+
+        .search-button {
+            background-color: #4285f4;
+            border: none;
+            color: white;
+            font-size: 14px;
+            padding: 8px 20px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-family: 'Tiro Bangla', sans-serif;
+        }
+
+        .search-button:hover {
+            background-color: #d0e0ff;
+        }
+
+        .trending-keywords {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .trending-keywords h3 {
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .trending-keywords ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .trending-keywords li {
+            background-color: #e8f0fe;
+            padding: 7px 12px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .trending-keywords li:hover {
+            background-color: #d0e0ff;
+        }
+
+        footer {
+            background-color: #2B587A;
+            padding: 15px 20px;
+            font-size: 14px;
+            color: white;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        #datetime {
+            text-align: left;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #555;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 600px) {
+            .searchArea {
+                padding: 10px;
+            }
+
+            .logo-container img {
+                max-width: 150px;
+            }
+
+            .search-input-container {
+                max-width: 90%;
+            }
+
+            .search-button {
+                padding: 8px 15px;
+            }
+
+            .trending-keywords li {
+                padding: 5px 10px;
+                margin: 3px;
+            }
+
+            #datetime {
+                padding: 5px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="https://blog.khujoweb.com">খুঁজোওয়েব ব্লগ</a>
+    </header>
+    <section class="searchArea">
+        <div class="logo-container">
+            <img src="./khujoweb.png" alt="খুঁজোওয়েব লোগো">
+        </div>
+
+        <form class="search-form" action="result.html" method="get">
+            <div class="search-input-container">
+                <input type="text" class="search-input" name="query" placeholder="এখানে খুঁজুন...">
+                <button type="submit" class="search-button">খুঁজুন</button>
+            </div>
+        </form>
+
+        <div class="trending-keywords">
+            <h3>জনপ্রিয় অনুসন্ধান</h3>
+            <ul id="trending-list">
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">আমাদের সম্পর্কে</a>
+            <a href="contact.html">যোগাযোগ</a>
+            <a href="privacy-policy.html">গোপনীয়তা নীতি</a>
+        </div>
+        <p>&copy; ২০২৫ খুঁজোওয়েব, সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <script>
+        const trendingKeywords = [
+            "বাংলাদেশ ফুটবল",
+            "হামজা চৌধুরী",
+            "আজকের খবর",
+            "ড. ইউনূস",
+            "ঢাকায় ঈদ",
+            "অনলাইন ক্লাস",
+            "রেসিপি",
+            "সরকারি চাকরি",
+            "সিনেমা",
+            "উইকিপিডিয়া বিতর্ক",
+            "শিক্ষাবৃত্তি"
+        ];
+
+        const trendingList = document.getElementById("trending-list");
+
+        trendingKeywords.forEach(keyword => {
+            const listItem = document.createElement("li");
+            listItem.textContent = keyword;
+            listItem.addEventListener("click", () => {
+                document.querySelector(".search-input").value = keyword;
+                document.querySelector(".search-form").submit();
+            });
+            trendingList.appendChild(listItem);
+        });
+
+        function updateDateTime() {
+            const now = new Date();
+            const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const formattedDateTime = now.toLocaleDateString('bn-BD', options);
+            document.getElementById('datetime').textContent = formattedDateTime;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+
+</html>
