@@ -35,33 +35,6 @@
         <div class="trending-keywords">
             <h3>জনপ্রিয় অনুসন্ধান</h3>
             <ul id="trending-list">
-                <script>
-                    const trendingKeywords = [
-                        "বাংলাদেশ ফুটবল",
-                        "হামজা চৌধুরী",
-                        "আজকের খবর",
-                        "ড. ইউনূস",
-                        "ঢাকায় ঈদ",
-                        "অনলাইন ক্লাস",
-                        "রেসিপি",
-                        "সরকারি চাকরি",
-                        "সিনেমা",
-                        "উইকিপিডিয়া বিতর্ক",
-                        "শিক্ষাবৃত্তি"
-                    ];
-
-                    const trendingList = document.getElementById("trending-list");
-
-                    trendingKeywords.forEach(keyword => {
-                        const listItem = document.createElement("li");
-                        listItem.textContent = keyword;
-                        listItem.addEventListener("click", () => {
-                            document.querySelector(".search-input").value = keyword;
-                            document.querySelector(".search-form").submit();
-                        });
-                        trendingList.appendChild(listItem);
-                    });
-                </script>
             </ul>
         </div>
     </section>
