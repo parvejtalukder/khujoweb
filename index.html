@@ -13,9 +13,8 @@
     <meta property="og:description" content="খুঁজোওয়েব: বাংলাদেশের প্রথম নিরাপদ বাংলা সার্চ ইঞ্জিন, নির্ভরযোগ্য তথ্য এবং সুরক্ষিত অনুসন্ধান অভিজ্ঞতা উপভোগ করুন।">
     <meta property="og:type" content="website">
     <link href="https://fonts.maateen.me/tiro-bangla/font.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/index.css">  
-    <script src="scripts/index.js"></script>
-</head>
+    <link rel="stylesheet" href="styles/index.css">
+    </head>
 <body>
     <header>
         <a href="https://blog.khujoweb.com">খুঁজোওয়েব ব্লগ</a>
@@ -35,43 +34,33 @@
         <div class="trending-keywords">
             <h3>জনপ্রিয় অনুসন্ধান</h3>
             <ul id="trending-list">
-        <script>
-        const trendingKeywords = [
-            "বাংলাদেশ ফুটবল",
-            "হামজা চৌধুরী",
-            "আজকের খবর",
-            "ড. ইউনূস",
-            "ঢাকায় ঈদ",
-            "অনলাইন ক্লাস",
-            "রেসিপি",
-            "সরকারি চাকরি",
-            "সিনেমা",
-            "উইকিপিডিয়া বিতর্ক",
-            "শিক্ষাবৃত্তি"
-        ];
+                <script>
+                    const trendingKeywords = [
+                        "বাংলাদেশ ফুটবল",
+                        "হামজা চৌধুরী",
+                        "আজকের খবর",
+                        "ড. ইউনূস",
+                        "ঢাকায় ঈদ",
+                        "অনলাইন ক্লাস",
+                        "রেসিপি",
+                        "সরকারি চাকরি",
+                        "সিনেমা",
+                        "উইকিপিডিয়া বিতর্ক",
+                        "শিক্ষাবৃত্তি"
+                    ];
 
-        const trendingList = document.getElementById("trending-list");
+                    const trendingList = document.getElementById("trending-list");
 
-        trendingKeywords.forEach(keyword => {
-            const listItem = document.createElement("li");
-            listItem.textContent = keyword;
-            listItem.addEventListener("click", () => {
-                document.querySelector(".search-input").value = keyword;
-                document.querySelector(".search-form").submit();
-            });
-            trendingList.appendChild(listItem);
-        });
-
-        function updateDateTime() {
-            const now = new Date();
-            const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            const formattedDateTime = now.toLocaleDateString('bn-BD', options);
-            document.getElementById('datetime').textContent = formattedDateTime;
-        }
-
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
-    </script>
+                    trendingKeywords.forEach(keyword => {
+                        const listItem = document.createElement("li");
+                        listItem.textContent = keyword;
+                        listItem.addEventListener("click", () => {
+                            document.querySelector(".search-input").value = keyword;
+                            document.querySelector(".search-form").submit();
+                        });
+                        trendingList.appendChild(listItem);
+                    });
+                </script>
             </ul>
         </div>
     </section>
