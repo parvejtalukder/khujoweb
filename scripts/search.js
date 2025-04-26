@@ -47,7 +47,7 @@ let currentPage = 1;
 let currentQuery = "";
 
 function searchResults(query, page = 1) {
-    const API_KEY = 'YOUR_BRAVE_API_KEY'; // 🔥 Replace with your Brave API Key
+    const API_KEY = 'BSAuysYkY4TMapNnh_zBDbHA46KcIuf'; // 🔥 Replace with your Brave API Key
     const RESULTS_PER_PAGE = 10;
     const offset = (page - 1) * RESULTS_PER_PAGE;
 
