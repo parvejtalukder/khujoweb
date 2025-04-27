@@ -1,0 +1,55 @@
+.results-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 20px auto;
+    gap: 20px;
+    max-width: 1200px;
+    padding: 0 10px;
+}
+
+.search-results-container {
+    flex: 2;
+}
+
+.knowledge-panel {
+    flex: 1;
+    max-width: 320px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-family: 'Tiro Bangla', sans-serif;
+    display: none;
+    position: sticky;
+    top: 20px; /* Always visible on scroll */
+}
+
+.panel-card {
+    text-align: center;
+}
+
+.panel-image {
+    width: 80%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.panel-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.panel-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.panel-link {
+    text-decoration: none;
+    color: #4285f4;
+    font-weight: bold;
+}
